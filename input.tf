@@ -1,22 +1,22 @@
 variable "resource_group_name" {
-  type        = string
+  type = string
 }
 
 variable "location" {
-  type        = string
+  type = string
 }
 
 variable "name" {
-  type        = string
+  type = string
 }
 
 variable "address_space" {
-  type        = list(string)
+  type = list(string)
 }
 
 variable "dns_servers" {
-  type        = list(string)
-  default     = []
+  type    = list(string)
+  default = []
 }
 
 variable "subnets" {
@@ -26,7 +26,6 @@ variable "subnets" {
       service_endpoints                              = list(string)
       enforce_private_link_service_network_policies  = bool
       enforce_private_link_endpoint_network_policies = bool
-
       delegations = map(
         object({
           name    = string
@@ -39,6 +38,6 @@ variable "subnets" {
 }
 
 variable "additional_tags" {
-  default     = {}
-  type        = map(string)
+  default = {}
+  type    = map(string)
 }
