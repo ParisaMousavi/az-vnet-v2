@@ -42,7 +42,7 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
   name                       = "logs-metrics-2-workspace"
   target_resource_id         = azurerm_virtual_network.this.id
   log_analytics_workspace_id = var.log_analytics_workspace_id 
-  log {
+  enabled_log  {
     category_group = "allLogs"
     retention_policy {
       enabled = false
