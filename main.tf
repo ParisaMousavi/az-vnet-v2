@@ -45,14 +45,14 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
   enabled_log  {
     category_group = "allLogs"
     retention_policy {
-      enabled = false
+      enabled = true
       days = 0
     }
   }
   metrics {
-    category_group = "AllMetrics"
+    category = "AllMetrics"
     retention_policy {
-      enabled = false
+      enabled = true
       days = 0
     }
   }  
