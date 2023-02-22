@@ -36,3 +36,24 @@ resource "azurerm_subnet" "this" {
     }
   }
 }
+
+resource "azurerm_monitor_diagnostic_setting" "this" {
+  count = var.log_analytics_workspace_id == null ? 0 : 1
+  name                       = "logs-metrics-2-workspace"
+  target_resource_id         = azurerm_virtual_network.this.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id 
+  log {
+    category_group = "allLogs"
+    retention_policy {
+      enabled = false
+      days = 0
+    }
+  }
+  metrics {
+    category_group = "AllMetrics"
+    retention_policy {
+      enabled = false
+      days = 0
+    }
+  }  
+}

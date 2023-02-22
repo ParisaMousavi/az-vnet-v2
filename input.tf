@@ -41,3 +41,8 @@ variable "additional_tags" {
   default = {}
   type    = map(string)
 }
+
+variable "log_analytics_workspace_id" {
+  type = string
+  default = null
+}
