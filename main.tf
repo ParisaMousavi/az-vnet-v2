@@ -49,4 +49,12 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
       days = 0
     }
   } 
+    metric {
+    category = "AllMetrics"
+    enabled  = true
+
+    retention_policy {
+      enabled = true
+    }
+  }
 }
